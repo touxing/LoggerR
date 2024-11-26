@@ -1,0 +1,50 @@
+{
+  "name": "logger",
+  "version": "0.0.1",
+  "description": "A logger for Browser. It using indexedDB to store logs.",
+  "main": "dist/esm/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "dev": "rollup -c rollup.config.ts --configPlugin rollup-plugin-typescript2 --environment BUILD:development --watch",
+    "build:dev": "rollup -c rollup.config.ts --configPlugin rollup-plugin-typescript2 --environment BUILD:development",
+    "build": "rollup -c rollup.config.ts --configPlugin rollup-plugin-typescript2 --environment BUILD:production"
+  },
+  "keywords": [
+    "logger",
+    "indexedDB",
+    "Browser",
+    "log",
+    "debug",
+    "console"
+  ],
+  "author": "hotsuitor <hotsuitor@qq.com>",
+  "license": "MIT",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie <= 11"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^28.0.1",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@types/node": "^22.9.3",
+    "@types/pako": "^2.0.3",
+    "rollup": "^4.27.4",
+    "rollup-plugin-delete": "^2.1.0",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "rollup-plugin-web-worker-loader": "^1.6.1",
+    "tslib": "^2.8.1",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.26.0",
+    "pako": "^2.1.0"
+  }
+}

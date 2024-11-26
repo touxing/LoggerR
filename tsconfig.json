@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",
+    "lib": ["ES2015", "ES2016", "DOM"],
+    "moduleResolution": "node",
+    "downlevelIteration": true, // 自动降级
+    "esModuleInterop": true,
+    "experimentalDecorators": true, // 启用装饰器
+    "outDir": "dist/lib",
+    "strict": true,
+    "skipLibCheck": false,
+    "declaration": true,
+    "declarationDir": "dist/types",
+    "typeRoots": ["node_modules/@types", "./types/"]
+  },
+  "include": ["lib/**/*", "rollup.config.ts", "./types/global.d.ts"]
+}

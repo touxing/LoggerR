@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type="module" src="../dist/umd/index.js"></script>
+</head>
+
+<body>
+  <div>
+    打开控制台查看日志
+  </div>
+  <div>
+    <div>控制台输入:</div>
+    <code>Logger.Logger.download()</code>
+    <div>下载日志文件</div>
+  </div>
+  <div>
+    <div>解压日志文件:</div>
+    <code>
+import pako from 'pako';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+
+async function main() {
+
+  let log = '7da70d38-e778-4851-9741-6542a206b2e1'
+  // 日志存放目录
+  let distance = `C:\\Users\\xxxx\\Downloads\\${log}`
+  fs.readFile(path.normalize(distance)).then(data => {
+    const inflated = pako.inflate(data);
+    fs.writeFile(`./log/${log}.log`, inflated).then(() => {
+      console.log(`output log file ${log}.log done`);
+    })
+  }).catch(err => {
+    console.error('解压失败',err);
+  })
+}
+
+main()
+    </code>
+  </div>
+  <script>
+    window.onload = function() {
+      setInterval(() => {
+        Logger.Logger.info('Hello World'+ new Date().toLocaleTimeString())
+      },1000)
+    }
+  </script>
+</body>
+
+</html>
